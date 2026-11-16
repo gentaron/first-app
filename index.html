@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <meta name="theme-color" content="#79b800" />
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,5 +20,10 @@
         <ul id="task-list"></ul>
     </div>
     <script src="script.js"></script>
-</body>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./install-worker.js').catch(console.error);
+    }
+  </script>
+  </body>
 </html>
